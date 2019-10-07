@@ -18,6 +18,7 @@ public class ApplicationRunner {
                 "side " + triangle10.getSide() + " and " +
                         "height " + triangle10.getHeight() +
                         " has area " + triangle10.getArea());
+        
 
 
     }
