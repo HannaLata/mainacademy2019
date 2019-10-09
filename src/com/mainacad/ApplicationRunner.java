@@ -1,5 +1,8 @@
 package com.mainacad;
 
+import com.abs.Shape;
+import com.mainacad.circle.Circle;
+import com.mainacad.square.Square;
 import com.mainacad.triangle.Triangle;
 
 public class ApplicationRunner {
@@ -9,17 +12,23 @@ public class ApplicationRunner {
 
     public static void main(String[] args) {
 
-        Triangle triangle10 = new Triangle();
-        triangle10.setSide(15.0);
-        triangle10.setHeight(17.0);
+        Triangle triangle = new Triangle();
+        triangle.setSide(17);
+        triangle.setHeight(29);
+        Circle circle = new Circle();
+        circle.setRadius(16);
+        Square square = new Square();
+        square.setSide(18);
 
-        System.out.println(
-                "Triangle with " +
-                "side " + triangle10.getSide() + " and " +
-                        "height " + triangle10.getHeight() +
-                        " has area " + triangle10.getArea());
-        
+        Shape minShape;
+        if (circle.getArea() < square.getArea()) {
+            minShape = circle;
+        } else {
+            minShape = square;
+        }
+        if (minShape.getArea() > triangle.getArea()) {
+            minShape = triangle;
+        }
+        System.out.println("Min shape has area " + minShape.getArea());
 
-
-    }
-}
+    } }
